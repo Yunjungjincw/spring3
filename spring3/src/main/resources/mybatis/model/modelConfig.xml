@@ -2,3 +2,16 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  
+  
+  <configuration>
+	<typeAliases>
+  <!--<typeAlias type="패키지명.클래스명"    alias="클래스별칭"/>
+  	  <typeAlias type="java.lang.String" alias="string"/>	
+	  <typeAlias type="java.util.List"   alias="list"/> -->
+	  <typeAlias type="com.ourcom.app3.domain.Product"    
+	                                     alias="product"/>
+	  <typeAlias type="com.ourcom.app3.domain.ImageFileVO" alias="imageFileVO"/>
+	</typeAliases>
+</configuration>

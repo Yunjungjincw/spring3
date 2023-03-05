@@ -2,13 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set value="${articleList}" var="list"/>
+<c:set value="${articleList2}" var="list2"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+/* 	function insert(){
+		location.href="<c:url value='/article/insert'/>";
+	} */
+</script>
 </head>
 <body>
+	<a href="<%=request.getContextPath()%>/article/insert">회원가입</a>
 	<h3>resultView.jsp 페이지다</h3>
 	*전체 게시물 수 : ${totalCnt}<br>
 	*전체 게시물 : ${list}
@@ -39,8 +46,21 @@
 				</tr>
 			</c:forEach>
 			</table>
+			<hr>
+			<label>전체 회원 조회2</label>
+			<table border="1">
+				<c:forEach items="${articleList2}" var="list2">
+					<tr>
+						<td>${list2.articleNo}</td>
+						<td><a href="<%=request.getContextPath()%>/article/content?articleNo=${list2.articleNo}">${list2.title}</a></td>
+						<td>${list2.content}</td>
+						<td>${list2.writeDate}</td>
+						<td>${list2.writerid}</td>
+					</tr>
+				</c:forEach>
+			</table>
 		</c:otherwise>
 	</c:choose>
-		
+	<!-- <input type="button" value="회원가입" onclick="insert()"> -->
 </body>
 </html>
